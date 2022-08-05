@@ -13,6 +13,4 @@ export class Employee{
     State?: string;
     ZipCode?: string;
 }
-export interface MyData{
 
-}

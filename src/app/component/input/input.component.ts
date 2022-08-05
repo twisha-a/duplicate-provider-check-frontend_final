@@ -4,6 +4,8 @@ import { Employee } from 'src/app/data'
 import { FileInputService } from 'src/app/service/file-input.service'
 import { Router } from '@angular/router';
 import {Papa} from 'ngx-papaparse'
+import { NgxSpinnerService } from "ngx-spinner";
+
 @Component({
   selector: 'app-input',
   templateUrl: './input.component.html',
@@ -21,9 +23,22 @@ export class InputComponent implements OnInit {
   }
   constructor(private papa: Papa,
               private fileInputService: FileInputService,
-              private router: Router) { }
+              private router: Router, private spinner: NgxSpinnerService
+              ) { }
 
-  ngOnInit(): void {  }
+  //ngOnInit(): void {  }
+  // spinner- changed
+  ngOnInit() {
+    this.spinner.show();
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 2000);
+  }
+
+
+
+
+
 
   saveInput(x:any){this.fileInputService.FileInput(x).subscribe(
     data =>{
@@ -49,12 +64,13 @@ export class InputComponent implements OnInit {
     this.papa.parse(this.file,{complete: (result) => {console.log('Parsed: ', result);
                                                         this.header=result.data.splice(0,1)[0];
                                                         this.output=result.data}})
-//     this.output=this.papa.parse(this.file)
-   // Print file contents
-
-//     const reader = new filereader();
-
     this.saveInput(this.output);
+    showSpinner() {
+      this.spinner.show();
+      setTimeout(() => {
+        this.spinner.hide();
+      }, 5000);
+    }
   }
 
 }

@@ -7,7 +7,8 @@ import { AppComponent } from './app.component';
 import { InputComponent } from './component/input/input.component';
 import { OutputComponent } from './component/output/output.component';
 import { DisplayInputComponent } from './component/display-input/display-input.component';
-import { SpinnerComponent } from 'src/app/component/spinner.component';
+import { NgxSpinnerModule } from "ngx-spinner";
+//import { SpinnerComponent } from 'src/app/component/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -15,14 +16,14 @@ import { SpinnerComponent } from 'src/app/component/spinner.component';
     InputComponent,
     OutputComponent,
     DisplayInputComponent,
-    SpinnerComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
