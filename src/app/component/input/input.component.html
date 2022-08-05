@@ -1,16 +1,27 @@
 <html>
   <body>
-  <hr>
+    <nav>
+        <div class="nav-container">
+          <div class="left-col">
+            <img src=
+                 "https://yt3.ggpht.com/a-/AAuE7mDF4SSB4tUihx67vL7oMAajCx7riMi8n3AdTQ=s900-mo-c-c0xffffffff-rj-k-no" alt="" class="logo" style="width: 90px;">
+          </div>
+
+          <div class="right-col">
+            <div class="topnav">
+              <a class="active" href="#home">Home</a>
+              <a href="#">Documentation</a>
+              <a href="#">Contact</a>
+              <a href="#about">About</a>
+            </div>
+
+          </div>
+        </div>
+    </nav>
+    <hr>
     <div><h1>Duplicate Provider</h1></div>
     <hr>
     <br>
-    <div class="topnav">
-      <a class="active" href="#home">Home</a>
-      <a href="#">Documentation</a>
-      <a href="#">Contact</a>
-      <a href="#about">About</a>
-    </div>
-
     <div id="preloader"></div>
 
     <br/>
@@ -20,8 +31,8 @@
         <b>Upload the provider's CSV file</b>
       </div>
       <div class="card-body">
-        <input type='file' onchange='convertFile(event)' id='fileInput'>
-<!--        <input type='file'  (change)="fileChanged($event)">-->
+<!--        <input type='file' onchange='convertFile(event)' >-->
+        <input type='file'  (change)="fileChanged($event)" id='fileInput'>
       </div>
     </div>
 <!--    <div class="Block">-->
@@ -35,9 +46,9 @@
   <!--             accept=".xls, .csv, .xlsx"-->
   <!--             onchange="console.log(event.target.files)"-->
   <!--      />-->
-<!--        (click)="showSpinner()"-->
+<!--        -->
         <br/>
-        <button type="submit" ><b>Submit</b></button>
+        <button type="submit" (click)="showSpinner()"><b>Submit</b></button>
          <br/><br/><br/><br/>
       </div>
     </form>
@@ -118,10 +129,11 @@
 
 
 <!--    https://media.giphy.com/media/o8igknyuKs6aY/giphy.gif-->
-  <ngx-spinner
-  bdColor="rgba(0, 0, 0, 0.98)"
-  template="<img src='loader.gif' />">
-</ngx-spinner>
+    <ngx-spinner type="ball-circus" bdColor="rgba(0, 0, 0, 0.9)"><p style="font-size: 50px; color: white">Loading...</p></ngx-spinner>
+<!--  <ngx-spinner-->
+<!--  bdColor="rgba(0, 0, 0, 0.9)"-->
+<!--  template="<img src='https://th.bing.com/th/id/R.6e055a03e9f4f740d8432d3bd5e3d94a?rik=BHUVi4o1HCnCJQ&pid=ImgRaw&r=0' />">-->
+<!--</ngx-spinner>-->
   </body>
 </html>
 

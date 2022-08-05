@@ -11,6 +11,7 @@ import { NgxSpinnerService } from "ngx-spinner";
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.css']
 })
+
 export class InputComponent implements OnInit {
   header : any
   myData : any
@@ -33,6 +34,12 @@ export class InputComponent implements OnInit {
     setTimeout(() => {
       this.spinner.hide();
     }, 2000);
+  }
+  showSpinner() {
+      this.spinner.show();
+      setTimeout(() => {
+        this.spinner.hide();
+      }, 24000);
   }
 
 
@@ -65,12 +72,12 @@ export class InputComponent implements OnInit {
                                                         this.header=result.data.splice(0,1)[0];
                                                         this.output=result.data}})
     this.saveInput(this.output);
-    showSpinner() {
-      this.spinner.show();
-      setTimeout(() => {
-        this.spinner.hide();
-      }, 5000);
-    }
+//     showSpinner() {
+//       this.spinner.show();
+//       setTimeout(() => {
+//         this.spinner.hide();
+//       }, 5000);
+//     }
   }
 
 }
